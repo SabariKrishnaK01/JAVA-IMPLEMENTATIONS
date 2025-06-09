@@ -1,0 +1,23 @@
+Write a java program for Login System for given conditions : Username and Password:
+
+import java.util.*;
+
+public class LoginSystem {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String correctUsername = "SABARIKRISHNA KARUNAKARAN";
+        String correctPasscode = "09112004";
+        
+        System.out.println("Enter the Username:");
+        String enteredUsername = input.nextLine();
+        
+        System.out.println("Enter the Passcode:");
+        String enteredPasscode = input.nextLine();
+        
+        if (enteredUsername.equals(correctUsername) && enteredPasscode.equals(correctPasscode)) {
+            System.out.println("Access Granted");
+        } else {
+            System.out.println("Wrong");
+        }
+    }
+}

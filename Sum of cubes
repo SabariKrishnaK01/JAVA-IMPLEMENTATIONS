@@ -1,0 +1,28 @@
+Consider the two integers m,n our task is to find the sum of cubres from m to n ,if m > n return 0 and display the proper message. SAMPLE TEST CASE1 = m=2,n=4 ; SAMPLE TEST CASE2 = m=4,n=4 ; SAMPLE TEST CASE3 = m=7,n=2.
+
+import java.util.*;
+
+public class SumofCubes {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the starting number (m):");
+        int m = sc.nextInt();
+
+        System.out.println("Enter the ending number (n):");
+        int n = sc.nextInt();
+
+        if (m > n) {
+            System.out.println("Invalid range. Starting number should be less than or equal to ending number.");
+        } else {
+            int sum = 0;
+            for (int i = m; i <= n; i++) {
+                int cube = i * i * i;
+                sum += cube;
+            }
+            System.out.println("Sum of cubes from " + m + " to " + n + " is: " + sum);
+        }
+
+        sc.close();
+    }
+}

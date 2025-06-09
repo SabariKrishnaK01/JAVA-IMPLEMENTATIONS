@@ -1,0 +1,22 @@
+LARGEST NUMBER BETWEEN THREE GIVEN NUMBERS TO BE DETERMINED.
+import java.util.*;
+
+public class LargestNumber{
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter Three numbers of your choice :");
+        int a = input.nextInt();
+        int b = input.nextInt();
+        int c = input.nextInt();
+        
+        if(a>=b && a>=c){
+        System.out.println("Largest Number is :" + a);
+    }
+    else if(b>=a && b>=c){
+        System.out.println("Largest Number is :" + b);
+    }
+    else {
+          System.out.println("Largest Number is :" + c);
+    }
+}
+}

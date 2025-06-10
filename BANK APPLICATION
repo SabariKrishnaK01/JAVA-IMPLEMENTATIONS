@@ -1,0 +1,80 @@
+JAVA OOPS CONCEPT IMPLEMENTED IN BANK APPLICATION
+// Abstraction
+abstract class BankAccount {
+    private String AccountHolderName;
+    private double Balance;
+
+    // Constructor
+    public BankAccount(String AccountHolderName, double Balance) {
+        this.AccountHolderName = AccountHolderName;
+        this.Balance = Balance;
+    }
+
+    // Abstract method
+    public abstract void DisplayDetails();
+
+    // Encapsulation (Getters & Setters)
+    public String getAccountHolderName() {
+        return AccountHolderName;
+    }
+
+    public void setAccountHolderName(String AccountHolderName) {
+        this.AccountHolderName = AccountHolderName;
+    }
+
+    public double getBalance() {
+        return Balance;
+    }
+
+    public void setBalance(double Balance) {
+        this.Balance = Balance;
+    }
+
+    // Polymorphism (Deposit & Withdraw)
+    public void deposit(double amount) {
+        if (amount > 0) {
+            Balance += amount;
+            System.out.println("Deposited Amount: " + amount);
+        } else {
+            System.out.println("Invalid Deposit Amount");
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= Balance) {
+            Balance -= amount;
+            System.out.println("Withdrawn Amount: " + amount);
+        } else {
+            System.out.println("Invalid Withdrawal Amount");
+        }
+    }
+}
+
+// SavingsAccount (Inheritance)
+class SavingsAccount extends BankAccount {
+    public SavingsAccount(String AccountHolderName, double Balance) {
+        super(AccountHolderName, Balance);
+    }
+
+    @Override
+    public void DisplayDetails() {
+        System.out.println("Account Holder Name: " + getAccountHolderName());
+        System.out.println("Account Balance: " + getBalance());
+    }
+}
+
+// Main Class
+public class Bankapplication {
+    public static void main(String[] args) {
+        System.out.println("WELCOME TO SK BANK"); // Added Welcome Message
+
+        BankAccount savings = new SavingsAccount("SabariKrishna Karunakaran", 9000000);
+
+        savings.DisplayDetails();
+
+        savings.deposit(500000);
+        savings.withdraw(20000);
+
+        savings.DisplayDetails();
+    }
+}
